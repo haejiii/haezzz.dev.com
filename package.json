@@ -1,0 +1,45 @@
+{
+  "name": "haezzz.dev.com",
+  "private": true,
+  "version": "1.0.0",
+  "author": "haejiii",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "gatsby develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "dependencies": {
+    "@fontsource/merriweather": "^5.0.8",
+    "@fontsource-variable/montserrat": "^5.0.17",
+    "gatsby": "^5.13.3",
+    "gatsby-plugin-feed": "^5.13.1",
+    "gatsby-plugin-image": "^3.13.1",
+    "gatsby-plugin-manifest": "^5.13.1",
+    "gatsby-plugin-sharp": "^5.13.1",
+    "gatsby-remark-images": "^7.13.1",
+    "gatsby-remark-prismjs": "^7.13.1",
+    "gatsby-remark-responsive-iframe": "^6.13.1",
+    "gatsby-source-filesystem": "^5.13.1",
+    "gatsby-transformer-remark": "^6.13.1",
+    "gatsby-transformer-sharp": "^5.13.1",
+    "prismjs": "^1.29.0",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.8"
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-starter"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/haejiii/haezzz.dev.com"
+  }
+}
