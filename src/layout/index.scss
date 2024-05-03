@@ -1,5 +1,27 @@
+@import '../assets/css/variables.scss';
+
 .wrapper {
   .header {
-    top: 0;
+    border-bottom: 1px solid $P500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $Spacing1 $Spacing8;
+
+    .left-section {
+      flex: 1;
+    }
+
+    .right-section {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  }
+
+  a.link {
+    color: $P500;
+    padding: $Spacing8;
   }
 }
