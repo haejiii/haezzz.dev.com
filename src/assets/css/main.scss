@@ -1,0 +1,27 @@
+@import 'variables.scss';
+
+@import './theme/light.scss';
+@import './theme/dark.scss';
+
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+    format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Pretendard-Regular';
+}
+
+button.icon {
+  width: fit-content;
+  height: fit-content;
+  border-radius: 50%;
+  background-color: #fff;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  margin: $Spacing4;
+}
