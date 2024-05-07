@@ -1,36 +1,26 @@
-import { useState } from 'react'
-import Lottie from 'lottie-react'
+import Switch from 'react-switch'
 
-import themeToggle from './theme-toggle.json'
-
-const LOTTIE_STATUS = {
-  PLAY: 'play',
-  STOP: 'stop',
-}
+import { THEME_MODE, useTheme } from '../../theme'
+import classNames from 'classnames'
 
 const ThemeSwitch = () => {
-  const lottieRef = useRef(null)
-  const [lottieStatus, setLottieStatus] = useState(LOTTIE_STATUS.PLAY)
+  const { mode, onChangeMode } = useTheme()
 
-  const handleLottieClick = () => {
-    if (lottieStatus === LOTTIE_STATUS.PLAY) {
-      lottieRef.current.playSegments([0, 20])
-      setLottieStatus(LOTTIE_STATUS.STOP)
-      return
-    }
+  const isDarkMode = mode === THEME_MODE.DARK
 
-    lottieRef.current.playSegments([20, 0])
-    setLottieStatus(LOTTIE_STATUS.PLAY)
+  const handleChange = () => {
+    onChangeMode(isDarkMode ? THEME_MODE.LIGHT : THEME_MODE.DARK)
   }
 
   return (
-    <Lottie
-      lottieRef={lottieRef}
-      animationData={themeToggle}
-      autoplay={false}
-      loop={false}
-      onClick={handleLottieClick}
-      initialSegment={[0, 20]}
+    <Switch
+      checked={isDarkMode}
+      width={58}
+      offColor="#d9dadd"
+      onColor="#000"
+      checkedIcon={<div className={classNames('icon', { checked: isDarkMode })}>D</div>}
+      uncheckedIcon={<div className={classNames('icon', { checked: isDarkMode })}>L</div>}
+      onChange={handleChange}
     />
   )
 }

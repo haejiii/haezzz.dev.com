@@ -1,6 +1,8 @@
 import { graphql, useStaticQuery } from 'gatsby'
+import { useTheme, THEME_MODE } from '../../theme'
 
 const GithubIconButton = () => {
+  const { mode } = useTheme()
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -19,9 +21,8 @@ const GithubIconButton = () => {
 
   return (
     <button className="icon" onClick={() => window.open(site.siteMetadata.social.github)}>
-      // TODO. Theme Color 대응
       <svg
-        // fill={color}
+        fill={mode === THEME_MODE.LIGHT ? '#000' : '#fff'}
         viewBox="0 0 72 72"
         width="25"
         height="25"
