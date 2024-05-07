@@ -19,10 +19,10 @@ $P400: #004174;
 $P500: #000f3c;
 
 /* Background, Border, Font Colors */
-$bg1: --bg1;
-$bg2: --bg2;
-$textColor: --textColor;
-$borderColor: --borderColor;
+$bg-1: var(--bg-1);
+$bg-2: var(--bg-2);
+$text-color: var(--text-color);
+$border-color: var(--border-color);
 
 /* Spacing */
 $Spacing0: 0rem;

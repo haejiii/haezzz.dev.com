@@ -12,14 +12,27 @@
 }
 
 body {
-  font-family: 'Pretendard-Regular';
+  font-family: Pretendard-Regular;
+  color: $text-color;
+  background-color: $bg-1;
+}
+
+.header {
+  .left-section {
+    .logo {
+      text-decoration: none;
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: $bg-2;
+    }
+  }
 }
 
 button.icon {
   width: fit-content;
   height: fit-content;
   border-radius: 50%;
-  background-color: #fff;
+  background-color: $bg-1;
   cursor: pointer;
   border: none;
   padding: 0;
@@ -37,10 +50,10 @@ button.icon {
 
   .icon {
     align-content: center;
-    color: #000;
+    color: $S50;
 
     &.checked {
-      color: #fff;
+      color: $bg-1;
     }
   }
 }

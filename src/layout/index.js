@@ -15,8 +15,8 @@ const Layout = ({ location, title, children }) => {
       <div className="wrapper" data-is-root-path={isRootPath}>
         <header className="header">
           <div className="left-section">
-            <Link to="/" replace={false}>
-              {title}
+            <Link className="logo" to="/" replace={false}>
+              <div>{title}</div>
             </Link>
           </div>
           <div className="right-section">

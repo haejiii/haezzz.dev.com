@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react'
+import { createContext, useContext, useEffect, useState } from 'react'
 
 export const THEME_MODE = {
   LIGHT: 'light',
@@ -23,13 +23,25 @@ export const ThemeProvider = ({ children }) => {
     ? THEME_MODE.DARK
     : THEME_MODE.LIGHT
 
+  const currentMode = localThemeMode ?? systemThemeMode
+
   const [theme, setTheme] = useState({
     ...initialState,
-    mode: localThemeMode ?? systemThemeMode,
+    mode: currentMode,
   })
 
+  useEffect(() => {
+    window.document.body.classList.add(currentMode)
+    localStorage.setItem(THEME_KEY, currentMode)
+  }, [])
+
   const onChangeMode = mode => {
-    document.documentElement.setAttribute('data-theme', mode)
+    if (mode === THEME_MODE.DARK) {
+      window.document.body.classList.add(THEME_MODE.DARK)
+    } else {
+      window.document.body.classList.remove(THEME_MODE.DARK)
+    }
+
     localStorage.setItem(THEME_KEY, mode)
     setTheme({ mode })
   }
