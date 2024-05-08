@@ -10,43 +10,43 @@ const initialState = {
   onChangeMode: () => {},
 }
 
-const THEME_KEY = 'theme-mode'
+export const THEME_KEY = 'theme-mode'
 
 const ThemeContext = createContext(initialState)
 
 export const useTheme = () => useContext(ThemeContext)
 
 export const ThemeProvider = ({ children }) => {
-  const localThemeMode = localStorage.getItem(THEME_KEY)
-
-  const systemThemeMode = window.matchMedia('(prefers-color-scheme: dark)').matches
-    ? THEME_MODE.DARK
-    : THEME_MODE.LIGHT
-
-  const currentMode = localThemeMode ?? systemThemeMode
+  const isBrowser = typeof window !== 'undefined'
 
   const [theme, setTheme] = useState({
     ...initialState,
-    mode: currentMode,
+    mode: THEME_MODE.LIGHT,
   })
 
   useEffect(() => {
-    window.document.body.classList.add(currentMode)
-    localStorage.setItem(THEME_KEY, currentMode)
+    // NOTE: 브라우저 환경에서만 실행
+    if (isBrowser) {
+      const currentMode = window.document.body.classList.contains(THEME_MODE.DARK)
+        ? THEME_MODE.DARK
+        : THEME_MODE.LIGHT
+      setTheme({ ...theme, mode: currentMode })
+    }
   }, [])
 
-  const onChangeMode = mode => {
-    if (mode === THEME_MODE.DARK) {
-      window.document.body.classList.add(THEME_MODE.DARK)
-    } else {
+  const toggleThemeMode = () => {
+    if (theme.mode === THEME_MODE.DARK) {
       window.document.body.classList.remove(THEME_MODE.DARK)
+    } else {
+      window.document.body.classList.add(THEME_MODE.DARK)
     }
 
-    localStorage.setItem(THEME_KEY, mode)
-    setTheme({ mode })
+    const nextMode = theme.mode === THEME_MODE.DARK ? THEME_MODE.LIGHT : THEME_MODE.DARK
+    localStorage.setItem(THEME_KEY, nextMode)
+    setTheme({ mode: nextMode })
   }
 
   return (
-    <ThemeContext.Provider value={{ ...theme, onChangeMode }}>{children}</ThemeContext.Provider>
+    <ThemeContext.Provider value={{ ...theme, toggleThemeMode }}>{children}</ThemeContext.Provider>
   )
 }

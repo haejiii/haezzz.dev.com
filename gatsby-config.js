@@ -20,6 +20,10 @@ module.exports = {
       github: `https://github.com/haejiii`,
     },
   },
+  flags: {
+    // NOTE: 로컬 서버에서 SSR 확인을 위해 true 로 변경
+    DEV_SSR: true,
+  },
   plugins: [
     `gatsby-plugin-image`,
     {
