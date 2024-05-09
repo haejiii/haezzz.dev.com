@@ -21,7 +21,7 @@ const GithubIconButton = () => {
 
   return (
     <button className="icon" onClick={() => window.open(site.siteMetadata.social.github)}>
-      <svg width="30" height="28" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 98 96">
+      <svg width="25" height="23" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 98 96">
         <path
           fillRule="evenodd"
           clipRule="evenodd"

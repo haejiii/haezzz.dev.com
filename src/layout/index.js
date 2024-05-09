@@ -23,7 +23,7 @@ const Layout = ({
 
   return (
     <ThemeProvider>
-      <header className="header">
+      <header className="layout-header">
         <div className="left-section">
           <Link className="logo" to="/" replace={false}>
             <div>{title}</div>
@@ -31,20 +31,27 @@ const Layout = ({
         </div>
         <div className="right-section">
           <ul className="category-list">
-            <li className="category-item">Posts</li>
-            <li className="category-item active">Tags</li>
-            <li className="category-item">Story</li>
+            <li className="category-item">
+              <Link>Posts</Link>
+            </li>
+            <li className="category-item active">
+              <Link>Tags</Link>
+            </li>
+            <li className="category-item">
+              <Link>Story</Link>
+            </li>
+            {/* <li className="category-item">
+              <Link>About</Link>
+            </li> */}
           </ul>
           <ThemeSwitch />
         </div>
       </header>
-      <main>
-        <div className="main-container">{children}</div>
-      </main>
-      <footer>
+      <main className="layout-main">{children}</main>
+      <footer className="layout-footer">
         <GithubIconButton />
         <div>
-          Copyright © <a href={social?.github}>{title}</a> All rights reserved.
+          Copyright © <Link to={social?.github}>{title}</Link> All rights reserved.
         </div>
       </footer>
     </ThemeProvider>

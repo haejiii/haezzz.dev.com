@@ -21,7 +21,7 @@ const BlogIndex = ({ data, location }) => {
   }
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location} title={siteTitle} social={social}>
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
@@ -68,6 +68,9 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        social {
+          github
+        }
       }
     }
     allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
