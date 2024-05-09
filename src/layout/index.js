@@ -12,14 +12,19 @@ import { ThemeProvider } from '../theme'
  * Tags - 태그별 컨텐츠 제공 or 모든 태그 표시
  * Story - 스토리 묶음 컨텐츠 제공
  */
-const Layout = ({
-  // location,
-  title,
-  social,
-  children,
-}) => {
-  // const rootPath = `${__PATH_PREFIX__}/`
-  // const isRootPath = location.pathname === rootPath
+
+const CATEGORY_LIST = [
+  { path: '/', title: 'Posts' },
+  { path: '/tags', title: 'Tags' },
+  { path: '/story', title: 'Story' },
+  // { path: '/about', title: 'About' },
+]
+
+const Layout = ({ location, title, social, children }) => {
+  const pathname = location.pathname.split('/').join('')
+  const pageTitle = CATEGORY_LIST.find(_ => _.path === `/${pathname}`)?.title
+
+  const isRootPath = Boolean(pageTitle)
 
   return (
     <ThemeProvider>
@@ -31,27 +36,23 @@ const Layout = ({
         </div>
         <div className="right-section">
           <ul className="category-list">
-            <li className="category-item">
-              <Link>Posts</Link>
-            </li>
-            <li className="category-item active">
-              <Link>Tags</Link>
-            </li>
-            <li className="category-item">
-              <Link>Story</Link>
-            </li>
-            {/* <li className="category-item">
-              <Link>About</Link>
-            </li> */}
+            {CATEGORY_LIST.map(_ => (
+              <li key={_.path} className="category-item bold">
+                <Link to={_.path}>{_.title}</Link>
+              </li>
+            ))}
           </ul>
           <ThemeSwitch />
         </div>
       </header>
-      <main className="layout-main">{children}</main>
+      <main className="layout-main">
+        {isRootPath && <h1 className="title">{pageTitle}</h1>}
+        {children}
+      </main>
       <footer className="layout-footer">
         <GithubIconButton />
         <div>
-          Copyright © <Link to={social?.github}>{title}</Link> All rights reserved.
+          Copyright © <a href={social?.github}>{title}</a> All rights reserved.
         </div>
       </footer>
     </ThemeProvider>

@@ -4,7 +4,7 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../layout'
 import Seo from '../components/seo'
 
-const PostsPage = ({ data, location }) => {
+const StoryPage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const social = data.site.siteMetadata?.social
   const posts = data.allMarkdownRemark.nodes
@@ -43,7 +43,7 @@ const PostsPage = ({ data, location }) => {
   )
 }
 
-export default PostsPage
+export default StoryPage
 
 export const Head = () => <Seo title="All posts" />
 

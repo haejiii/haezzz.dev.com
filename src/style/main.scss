@@ -3,18 +3,19 @@
 @import './theme/light.scss';
 @import './theme/dark.scss';
 
-@font-face {
-  font-family: 'Pretendard-Regular';
-  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
-    format('woff');
-  font-weight: 400;
-  font-style: normal;
-}
+@import 'font.scss';
+@import 'base.scss';
 
 body {
   font-family: Pretendard-Regular;
+  font-size: 1rem;
   color: $text-color;
   background-color: $bg-1;
+}
+
+a {
+  color: $P400;
+  text-decoration: none;
 }
 
 button.icon {
@@ -26,4 +27,8 @@ button.icon {
   border: none;
   padding: 0;
   margin: $Spacing4;
+}
+
+.bold {
+  font-family: Pretendard-Bold;
 }

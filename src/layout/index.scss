@@ -4,7 +4,7 @@
   display: flex;
   flex: 1;
   max-width: $max-width;
-  margin: $Spacing8 auto 0 auto;
+  margin: $Spacing8 auto;
   padding: 0 $Spacing10;
   align-items: center;
 
@@ -13,7 +13,7 @@
 
     .logo {
       text-decoration: none;
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       font-weight: bold;
       color: $bg-2;
     }
@@ -48,12 +48,17 @@
 
 .layout-main {
   max-width: $max-width;
-  margin: 0 auto;
+  margin: $Spacing32 auto 0 auto;
   padding: 0 $Spacing10;
+
+  .title {
+    padding-bottom: $Spacing6;
+    font-size: 2.8rem;
+    border-bottom: 0.1rem solid $border-color;
+  }
 }
 
 .layout-footer {
-  border-top: 1px solid $border-color;
   padding: $Spacing4 $Spacing8;
   text-align: center;
 }

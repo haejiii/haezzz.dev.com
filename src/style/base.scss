@@ -36,7 +36,7 @@
   --fontWeight-normal: 400;
   --fontWeight-bold: 700;
   --fontWeight-black: 900;
-  --fontSize-root: 16px;
+  --fontSize-root: 0.8rem;
   --lineHeight-none: 1;
   --lineHeight-tight: 1.1;
   --lineHeight-normal: 1.5;
@@ -97,7 +97,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-heading);
+  font-family: Pretendard-Bold;
+  color: inherit;
   margin-top: var(--spacing-12);
   margin-bottom: var(--spacing-6);
   line-height: var(--lineHeight-tight);
@@ -110,13 +111,13 @@ h4,
 h5,
 h6 {
   font-weight: var(--fontWeight-bold);
-  color: var(--color-heading);
+  color: inherit;
 }
 
 h1 {
   font-weight: var(--fontWeight-black);
   font-size: var(--fontSize-6);
-  color: var(--color-heading-black);
+  color: inherit;
 }
 
 h2 {
@@ -193,7 +194,7 @@ li > ul {
 }
 
 blockquote {
-  color: var(--color-text-light);
+  color: inherit;
   margin-left: calc(-1 * var(--spacing-6));
   margin-right: var(--spacing-8);
   padding: var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-6);

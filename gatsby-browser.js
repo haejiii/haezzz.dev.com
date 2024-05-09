@@ -2,7 +2,6 @@
 import '@fontsource-variable/montserrat'
 import '@fontsource/merriweather'
 // custom CSS styles
-import './src/style/base.scss'
 import './src/style/main.scss'
 
 // Highlighting for code blocks
