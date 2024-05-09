@@ -17,17 +17,6 @@ body {
   background-color: $bg-1;
 }
 
-.header {
-  .left-section {
-    .logo {
-      text-decoration: none;
-      font-size: 1.6rem;
-      font-weight: bold;
-      color: $bg-2;
-    }
-  }
-}
-
 button.icon {
   width: fit-content;
   height: fit-content;
@@ -37,6 +26,11 @@ button.icon {
   border: none;
   padding: 0;
   margin: $Spacing4;
+}
+
+a.link {
+  color: $P600;
+  padding: $Spacing8;
 }
 
 .react-switch-bg {
@@ -50,7 +44,6 @@ button.icon {
 
   .icon {
     align-content: center;
-    color: $S50;
 
     &.checked {
       color: $bg-1;

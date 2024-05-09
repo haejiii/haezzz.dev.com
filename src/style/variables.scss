@@ -11,12 +11,14 @@ $S800: #3b3c3f;
 $S900: #1b1b1e;
 
 /* Primary Colors */
-$P50: #f1faff;
-$P10: #a3abbd;
-$P200: #517cb6;
-$P300: #0f4c81;
-$P400: #004174;
-$P500: #000f3c;
+$P50: #f3faff;
+$P100: #def1ff;
+$P200: #b3daff;
+$P300: #8cb4f2;
+$P400: #517cb6;
+$P500: #668fcb;
+$P600: #3f6da5;
+$P700: #0f4c81;
 
 /* Background, Border, Font Colors */
 $bg-1: var(--bg-1);
@@ -39,3 +41,6 @@ $Spacing24: 2.4rem;
 $Spacing32: 3.2rem;
 $Spacing40: 4rem;
 $Spacing64: 6.4rem;
+
+/* Screen Size */
+$max-width: 30rem;

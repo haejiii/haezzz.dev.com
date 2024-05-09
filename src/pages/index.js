@@ -7,11 +7,12 @@ import Seo from '../components/seo'
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
+  const social = data.site.siteMetadata?.social
   const posts = data.allMarkdownRemark.nodes
 
   if (posts.length === 0) {
     return (
-      <Layout location={location} title={siteTitle}>
+      <Layout location={location} title={siteTitle} social={social}>
         <Bio />
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the directory you specified
