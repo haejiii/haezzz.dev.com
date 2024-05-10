@@ -25,6 +25,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           fields {
             slug
           }
+          tableOfContents
         }
       }
     }

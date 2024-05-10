@@ -1,0 +1,10 @@
+.table-of-content {
+  position: fixed;
+  top: 0;
+  right: 0;
+  flex-grow: 0;
+  max-width: calc(100% / 3);
+  // flex-basis: calc(100% / 3);
+  margin-left: 1rem;
+  overflow: auto;
+}
