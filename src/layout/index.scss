@@ -12,6 +12,7 @@
     flex: 1;
 
     .logo {
+      font-family: BMYEONSUNG;
       text-decoration: none;
       font-size: $fontSize-m;
       font-weight: bold;
@@ -40,6 +41,7 @@
       cursor: pointer;
 
       > a {
+        font-family: BMYEONSUNG;
         color: $text-color;
         text-decoration: none;
       }
