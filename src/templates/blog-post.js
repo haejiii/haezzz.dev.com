@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { Link, graphql } from 'gatsby'
 
-import Layout from '../layout'
-import Seo from '../components/seo'
+import Layout from '@/layout'
+import Seo from '@/components/seo'
 
 const BlogPostTemplate = ({ data: { previous, next, site, markdownRemark: post }, location }) => {
   const siteTitle = site.siteMetadata?.title || `Title`

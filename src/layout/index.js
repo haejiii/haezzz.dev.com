@@ -2,9 +2,9 @@ import './index.scss'
 
 import { Link } from 'gatsby'
 
-import GithubIconButton from '../components/github-button'
-import ThemeSwitch from '../components/theme-switch'
-import { ThemeProvider } from '../theme'
+import GithubIconButton from '@/components/github-button'
+import ThemeSwitch from '@/components/theme-switch'
+import { ThemeProvider } from '@/theme'
 
 const CATEGORY_LIST = [
   { path: '/', title: 'Posts' },

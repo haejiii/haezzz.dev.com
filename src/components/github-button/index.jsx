@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from 'gatsby'
-import { useTheme, THEME_MODE } from '../../theme'
+import { useTheme, THEME_MODE } from '@/theme'
 
 const GithubIconButton = () => {
   const { mode } = useTheme()

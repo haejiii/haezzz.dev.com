@@ -2,7 +2,7 @@ import './index.scss'
 
 import Switch from 'react-switch'
 
-import { THEME_MODE, useTheme } from '../../theme'
+import { THEME_MODE, useTheme } from '@/theme'
 import classNames from 'classnames'
 
 const ThemeSwitch = () => {
