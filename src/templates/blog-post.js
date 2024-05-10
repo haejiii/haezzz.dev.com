@@ -6,10 +6,9 @@ import Seo from '../components/seo'
 
 const BlogPostTemplate = ({ data: { previous, next, site, markdownRemark: post }, location }) => {
   const siteTitle = site.siteMetadata?.title || `Title`
-  const social = site.siteMetadata?.social
 
   return (
-    <Layout location={location} title={siteTitle} social={social}>
+    <Layout location={location} title={siteTitle}>
       <article className="blog-post" itemScope itemType="http://schema.org/Article">
         <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
@@ -48,6 +47,8 @@ const BlogPostTemplate = ({ data: { previous, next, site, markdownRemark: post }
   )
 }
 
+export default BlogPostTemplate
+
 export const Head = ({ data: { markdownRemark: post } }) => {
   return (
     <Seo
@@ -57,16 +58,11 @@ export const Head = ({ data: { markdownRemark: post } }) => {
   )
 }
 
-export default BlogPostTemplate
-
 export const pageQuery = graphql`
   query BlogPostBySlug($id: String!, $previousPostId: String, $nextPostId: String) {
     site {
       siteMetadata {
         title
-        social {
-          github
-        }
       }
     }
     markdownRemark(id: { eq: $id }) {

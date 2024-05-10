@@ -1,6 +1,26 @@
 body {
-  --bg-1: #f8f9fc;
-  --bg-2: #1b1b1e;
-  --text-color: #1b1b1e;
-  --border-color: #d9dadd;
+  /* Gray Colors */
+  --gray-50: #ffffff;
+  --gray-100: #f1f2f6;
+  --gray-200: #e8e9ed;
+  --gray-300: #d9dadd;
+  --gray-400: #b5b6b9;
+  --gray-500: #95969a;
+  --gray-S600: #6d6e71;
+  --gray-S700: #595a5d;
+  --gray-S800: #3b3c3f;
+  --gray-S900: #1b1b1e;
+
+  /* Primary Colors */
+  --primary-50: #f3faff;
+  --primary-100: #def1ff;
+  --primary-200: #b3daff;
+  --primary-300: #3f6da5;
+  --primary-400: #00239c;
+  --primary-500: #1b1e3c;
+
+  /* Background, Border, Font Colors */
+  --background-color: #ffffff;
+  --text-color: #1b1e3c;
+  --border-color: #e8e9ed;
 }

@@ -13,11 +13,11 @@ const ThemeSwitch = () => {
     <Switch
       checked={isDarkMode}
       width={58}
-      offColor="#1b1b1e"
-      onColor="#f8f9fc"
-      onHandleColor="#1b1b1e"
-      checkedIcon={<div className={classNames('icon bold', { checked: isDarkMode })}>D</div>}
-      uncheckedIcon={<div className={classNames('icon bold', { checked: !isDarkMode })}>L</div>}
+      offColor="#1b1e3c"
+      onColor="#ffffff"
+      onHandleColor="#1b1e3c"
+      checkedIcon={<div className={classNames('icon', { checked: isDarkMode })}>D</div>}
+      uncheckedIcon={<div className={classNames('icon', { checked: !isDarkMode })}>L</div>}
       onChange={toggleThemeMode}
     />
   )

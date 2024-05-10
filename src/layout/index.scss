@@ -4,8 +4,8 @@
   display: flex;
   flex: 1;
   max-width: $max-width;
-  margin: $Spacing8 auto;
-  padding: 0 $Spacing10;
+  margin: $spacing20 auto;
+  padding: 0 $spacing12;
   align-items: center;
 
   .left-section {
@@ -13,9 +13,9 @@
 
     .logo {
       text-decoration: none;
-      font-size: 1.6rem;
+      font-size: $fontSize-m;
       font-weight: bold;
-      color: $bg-2;
+      color: $text-color;
     }
   }
 
@@ -27,20 +27,21 @@
 
     .category-list {
       display: flex;
-      justify-content: center;
       list-style: none;
       margin: 0 auto;
+      justify-content: center;
       align-items: center;
     }
 
     .category-item {
-      background: $bg-1;
-      padding: 0 $Spacing12;
+      background: $background-color;
+      padding: 0 $spacing12;
       margin: 0;
       cursor: pointer;
 
       > a {
         color: $text-color;
+        text-decoration: none;
       }
     }
   }
@@ -48,17 +49,17 @@
 
 .layout-main {
   max-width: $max-width;
-  margin: $Spacing32 auto 0 auto;
-  padding: 0 $Spacing10;
+  margin: $spacing24 auto $spacing16 auto;
+  padding: 0 $spacing10;
 
-  .title {
-    padding-bottom: $Spacing6;
-    font-size: 2.8rem;
-    border-bottom: 0.1rem solid $border-color;
+  .main-content {
+    margin: $spacing20 0;
   }
 }
 
 .layout-footer {
-  padding: $Spacing4 $Spacing8;
+  color: $S500;
+  font-size: $fontSize-s;
   text-align: center;
+  padding: $spacing4 $spacing8;
 }

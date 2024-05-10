@@ -6,21 +6,16 @@ import GithubIconButton from '../components/github-button'
 import ThemeSwitch from '../components/theme-switch'
 import { ThemeProvider } from '../theme'
 
-/**
- * TODO. 카테고리별 컨텐츠 제공
- * Posts - 최근 조회수 순 5개 컨텐츠 제공 및 모든 컨텐츠 최신 순으로 정렬
- * Tags - 태그별 컨텐츠 제공 or 모든 태그 표시
- * Story - 스토리 묶음 컨텐츠 제공
- */
-
 const CATEGORY_LIST = [
   { path: '/', title: 'Posts' },
-  { path: '/tags', title: 'Tags' },
-  { path: '/story', title: 'Story' },
+  { path: '/', title: 'Tags' },
+  { path: '/', title: 'Story' },
+  // { path: '/tags', title: 'Tags' },
+  // { path: '/story', title: 'Story' },
   // { path: '/about', title: 'About' },
 ]
 
-const Layout = ({ location, title, social, children }) => {
+const Layout = ({ location, title, children }) => {
   const pathname = location.pathname.split('/').join('')
   const pageTitle = CATEGORY_LIST.find(_ => _.path === `/${pathname}`)?.title
 
@@ -37,7 +32,7 @@ const Layout = ({ location, title, social, children }) => {
         <div className="right-section">
           <ul className="category-list">
             {CATEGORY_LIST.map(_ => (
-              <li key={_.path} className="category-item bold">
+              <li key={_.path} className="category-item">
                 <Link to={_.path}>{_.title}</Link>
               </li>
             ))}
@@ -46,14 +41,12 @@ const Layout = ({ location, title, social, children }) => {
         </div>
       </header>
       <main className="layout-main">
-        {isRootPath && <h1 className="title">{pageTitle}</h1>}
-        {children}
+        {isRootPath && <h1>{pageTitle}</h1>}
+        <div className="main-content">{children}</div>
       </main>
       <footer className="layout-footer">
         <GithubIconButton />
-        <div>
-          Copyright © <a href={social?.github}>{title}</a> All rights reserved.
-        </div>
+        <div>Copyright © {title} All rights reserved.</div>
       </footer>
     </ThemeProvider>
   )

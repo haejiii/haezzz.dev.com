@@ -6,11 +6,10 @@ import Seo from '../components/seo'
 
 const TagsPage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const social = data.site.siteMetadata?.social
   const posts = data.allMarkdownRemark.nodes
 
   return (
-    <Layout location={location} title={siteTitle} social={social}>
+    <Layout location={location} title={siteTitle}>
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
@@ -52,9 +51,6 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
-        social {
-          github
-        }
       }
     }
     allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {

@@ -1,46 +1,55 @@
 /* Gray Colors */
-$S50: #f8f9fc;
-$S100: #f1f2f6;
-$S200: #e8e9ed;
-$S300: #d9dadd;
-$S400: #b5b6b9;
-$S500: #95969a;
-$S600: #6d6e71;
-$S700: #595a5d;
-$S800: #3b3c3f;
-$S900: #1b1b1e;
+$S50: var(--gray-50);
+$S100: var(--gray-100);
+$S200: var(--gray-200);
+$S300: var(--gray-300);
+$S400: var(--gray-400);
+$S500: var(--gray-500);
+$S600: var(--gray-600);
+$S700: var(--gray-700);
+$S800: var(--gray-800);
+$S900: var(--gray-900);
 
 /* Primary Colors */
-$P50: #f3faff;
-$P100: #def1ff;
-$P200: #b3daff;
-$P300: #8cb4f2;
-$P400: #517cb6;
-$P500: #668fcb;
-$P600: #3f6da5;
-$P700: #0f4c81;
+$P50: var(--primary-50);
+$P100: var(--primary-100);
+$P200: var(--primary-200);
+$P300: var(--primary-300);
+$P400: var(--primary-400);
+$P500: var(--primary-500);
 
 /* Background, Border, Font Colors */
-$bg-1: var(--bg-1);
-$bg-2: var(--bg-2);
+$background-color: var(--background-color);
 $text-color: var(--text-color);
 $border-color: var(--border-color);
 
 /* Spacing */
-$Spacing0: 0rem;
-$Spacing1: 0.1rem;
-$Spacing2: 0.2rem;
-$Spacing4: 0.4rem;
-$Spacing6: 0.6rem;
-$Spacing8: 0.8rem;
-$Spacing10: 1rem;
-$Spacing12: 1.2rem;
-$Spacing16: 1.6rem;
-$Spacing20: 2rem;
-$Spacing24: 2.4rem;
-$Spacing32: 3.2rem;
-$Spacing40: 4rem;
-$Spacing64: 6.4rem;
+$spacing0: 0rem;
+$spacing1: 0.1rem;
+$spacing2: 0.2rem;
+$spacing4: 0.4rem;
+$spacing6: 0.6rem;
+$spacing8: 0.8rem;
+$spacing10: 1rem;
+$spacing12: 1.2rem;
+$spacing16: 1.6rem;
+$spacing20: 2rem;
+$spacing24: 2.4rem;
+$spacing32: 3.2rem;
+$spacing40: 4rem;
+$spacing64: 6.4rem;
 
 /* Screen Size */
-$max-width: 52rem;
+$max-width: 62rem;
+
+/* fontSize, line height */
+$fontSize-s: 1rem;
+$fontSize-m: 1.4rem;
+$fontSize-l: 2rem;
+$fontSize-xl: 2.6rem;
+$fontSize-xxl: 3rem;
+$fontSize-xxxl: 3.6rem;
+
+$lineHeight-tight: 1.1;
+$lineHeight-normal: 1.5;
+$lineHeight-relaxed: 1.625;
