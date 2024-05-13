@@ -1,15 +1,18 @@
 import * as React from 'react'
 import { Link, graphql } from 'gatsby'
+import { startCase } from 'lodash'
 
 import Layout from '@/layout'
-import Seo from '@/components/seo'
+import SEO from '@/components/seo'
 
-const PostsPage = ({ data, location }) => {
+const TagPostListTemplate = ({ data, location, pageContext }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
+  const tagName = pageContext.tag
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location} title={siteTitle} subTitle={startCase(tagName)}>
+      <SEO title={siteTitle} keywords={[tagName]} />
       <ol>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
@@ -42,12 +45,10 @@ const PostsPage = ({ data, location }) => {
   )
 }
 
-export default PostsPage
-
-export const Head = () => <Seo title="All posts" />
+export default TagPostListTemplate
 
 export const pageQuery = graphql`
-  {
+  query ($tag: String) {
     site {
       siteMetadata {
         title
@@ -56,7 +57,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       limit: 1000
       sort: { frontmatter: { date: DESC } }
-      filter: { frontmatter: { published: { eq: true } } }
+      filter: { frontmatter: { published: { eq: true }, tags: { in: [$tag] } } }
     ) {
       nodes {
         excerpt
@@ -67,6 +68,7 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          tags
         }
       }
     }

@@ -6,9 +6,11 @@
 
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
+const { kebabCase } = require('lodash')
 
 // Define the template for blog post
 const blogPost = path.resolve(`./src/templates/blog-post.js`)
+const tagPostList = path.resolve(`./src/templates/tag-post-list.js`)
 
 /**
  * @type {import('gatsby').GatsbyNode['createPages']}
@@ -24,6 +26,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           id
           fields {
             slug
+          }
+          frontmatter {
+            tags
           }
           tableOfContents
         }
@@ -42,6 +47,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
   // `context` is available in the template as a prop and as a variable in GraphQL
 
+  const tags = new Set()
   if (posts.length > 0) {
     posts.forEach((post, index) => {
       const previousPostId = index === 0 ? null : posts[index - 1].id
@@ -56,8 +62,23 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           nextPostId,
         },
       })
+
+      if (post.frontmatter.tags) {
+        post.frontmatter.tags.forEach(tag => tags.add(tag))
+      }
     })
   }
+
+  // NOTE: 태그별 포스팅 목록 페이지 생성
+  tags.forEach(tag => {
+    createPage({
+      path: `/tags/${kebabCase(tag)}`,
+      component: tagPostList,
+      context: {
+        tag,
+      },
+    })
+  })
 }
 
 /**
@@ -102,7 +123,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
 
     type Social {
-      twitter: String
+      github: String
     }
 
     type MarkdownRemark implements Node {
@@ -114,6 +135,8 @@ exports.createSchemaCustomization = ({ actions }) => {
       title: String
       description: String
       date: Date @dateformat
+      published: Boolean
+      tags: [String]
     }
 
     type Fields {
