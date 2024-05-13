@@ -51,3 +51,9 @@
 .blog-post-nav ul {
   margin: $spacing0;
 }
+
+.tag-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding: $spacing16 0;
+}

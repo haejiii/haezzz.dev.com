@@ -1,39 +1,22 @@
-import * as React from 'react'
 import { Link, graphql } from 'gatsby'
 
 import Layout from '@/layout'
-import Seo from '@/components/seo'
+import SEO from '@/components/seo'
 
 const TagsPage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMarkdownRemark.nodes
+  const tags = data.allMarkdownRemark.group
 
   return (
     <Layout location={location} title={siteTitle}>
-      <ol style={{ listStyle: `none` }}>
-        {posts.map(post => {
-          const title = post.frontmatter.title || post.fields.slug
-
+      <SEO title="All Tags" keywords={tags.map(_ => _.fieldValue)} />
+      <ol className="tag-list">
+        {tags.map(_ => {
           return (
-            <li key={post.fields.slug}>
-              <article className="post-list-item" itemScope itemType="http://schema.org/Article">
-                <header>
-                  <h2>
-                    <Link to={post.fields.slug} itemProp="url">
-                      <span itemProp="headline">{title}</span>
-                    </Link>
-                  </h2>
-                  <small>{post.frontmatter.date}</small>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
-                    }}
-                    itemProp="description"
-                  />
-                </section>
-              </article>
+            <li key={_.fieldValue}>
+              <Link to={`/tags/${_.fieldValue}`}>
+                {_.fieldValue.toUpperCase()} ({_.totalCount})
+              </Link>
             </li>
           )
         })}
@@ -44,8 +27,6 @@ const TagsPage = ({ data, location }) => {
 
 export default TagsPage
 
-export const Head = () => <Seo title="All posts" />
-
 export const pageQuery = graphql`
   {
     site {
@@ -53,17 +34,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
-      nodes {
-        excerpt
-        fields {
-          slug
-        }
-        frontmatter {
-          date(formatString: "MMMM DD, YYYY")
-          title
-          description
-        }
+    allMarkdownRemark(limit: 1000) {
+      group(field: frontmatter___tags) {
+        fieldValue
+        totalCount
       }
     }
   }
