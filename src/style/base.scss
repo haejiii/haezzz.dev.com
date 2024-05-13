@@ -30,7 +30,6 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Pretendard-Bold;
   color: inherit;
   margin-top: $spacing12;
   margin-bottom: $spacing6;
@@ -48,12 +47,12 @@ h6 {
 }
 
 h1 {
-  font-weight: 900;
+  font-family: Pretendard-Bold;
   font-size: $fontSize-xxxl;
-  color: inherit;
 }
 
 h2 {
+  font-family: Pretendard-Bold;
   font-size: $fontSize-xxl;
 }
 

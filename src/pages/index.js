@@ -21,11 +21,11 @@ const PostsPage = ({ data, location }) => {
                   <div className="date">{post.frontmatter.date}</div>
                 </section>
                 <section className="right">
-                  <h2>
+                  <h5>
                     <Link to={post.fields.slug} itemProp="url">
                       <span itemProp="headline">{title}</span>
                     </Link>
-                  </h2>
+                  </h5>
                   <p
                     dangerouslySetInnerHTML={{
                       __html: post.frontmatter.description || post.excerpt,
