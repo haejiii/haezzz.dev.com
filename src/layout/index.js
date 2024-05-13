@@ -8,16 +8,14 @@ import { ThemeProvider } from '@/theme'
 
 const CATEGORY_LIST = [
   { path: '/', title: 'Posts' },
-  // { path: '/tags', title: 'Tags' },
+  { path: '/tags', title: 'Tags' },
   // { path: '/story', title: 'Story' },
   // { path: '/about', title: 'About' },
 ]
 
-const Layout = ({ location, title, children }) => {
+const Layout = ({ location, title, subTitle, children }) => {
   const pathname = location.pathname.split('/').join('')
-  const pageTitle = CATEGORY_LIST.find(_ => _.path === `/${pathname}`)?.title
-
-  const isRootPath = Boolean(pageTitle)
+  const pageTitle = subTitle || CATEGORY_LIST.find(_ => _.path === `/${pathname}`)?.title
 
   return (
     <ThemeProvider>
@@ -39,7 +37,7 @@ const Layout = ({ location, title, children }) => {
         </div>
       </header>
       <main className="layout-main">
-        {isRootPath && <h1>{pageTitle}</h1>}
+        <h1>{pageTitle}</h1>
         <div className="main-content">{children}</div>
       </main>
       <footer className="layout-footer">
