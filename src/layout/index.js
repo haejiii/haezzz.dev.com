@@ -8,8 +8,6 @@ import { ThemeProvider } from '@/theme'
 
 const CATEGORY_LIST = [
   { path: '/', title: 'Posts' },
-  { path: '/', title: 'Tags' },
-  { path: '/', title: 'Story' },
   // { path: '/tags', title: 'Tags' },
   // { path: '/story', title: 'Story' },
   // { path: '/about', title: 'About' },
