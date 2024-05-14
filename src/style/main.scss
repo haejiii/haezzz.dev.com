@@ -40,6 +40,7 @@
 }
 
 .blog-post header {
+  margin-bottom: $spacing12;
   border-bottom: 0.1rem solid $border-color;
 }
 
@@ -49,7 +50,7 @@
 
 .blog-post header p {
   font-size: $fontSize-s;
-  color: $S800;
+  color: $S700;
   margin: $spacing4 0;
 }
 
