@@ -39,17 +39,27 @@
   }
 }
 
+.blog-post header {
+  border-bottom: 0.1rem solid $border-color;
+}
+
 .blog-post header h1 {
   margin-bottom: $spacing4;
 }
 
 .blog-post header p {
-  font-size: $fontSize-m;
-  font-family: Pretendard-Bold;
+  font-size: $fontSize-s;
+  color: $S800;
+  margin: $spacing4 0;
+}
+
+.blog-post .desc {
+  margin: $spacing2 0;
+  color: $S500;
 }
 
 .blog-post-nav ul {
-  margin: $spacing0;
+  margin: $spacing2;
 }
 
 .tag-list {
