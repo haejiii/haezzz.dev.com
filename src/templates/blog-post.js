@@ -18,9 +18,12 @@ const BlogPostTemplate = ({ data: { previous, next, site, markdownRemark: post }
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>
         </header>
+        <div className="desc">
+          <p>{post.frontmatter.description}</p>
+        </div>
         <section dangerouslySetInnerHTML={{ __html: post.html }} itemProp="articleBody" />
-        <hr />
       </article>
+      <hr />
       <nav className="blog-post-nav">
         <ul
           style={{
@@ -75,7 +78,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "YYYY-MM-DD")
         description
       }
       tableOfContents
