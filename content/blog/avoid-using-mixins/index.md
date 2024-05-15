@@ -8,7 +8,7 @@ tags:
   - mixin
 ---
 
-## # 믹스인(Mixin) 란?
+## 믹스인(Mixin) 란?
 
 믹스인(mixin)은 소프트웨어 개발 원칙 중 `DRY(Do not Repeat Yourself)` 원칙을 지키기 위해 만들어졌습니다.
 
@@ -33,7 +33,7 @@ vue3 공식문서 또한 이러한 문제를 들어 Mixin 을 지양하고, [Com
 
 <br>
 
-## # Composition API의 등장
+## Composition API의 등장
 
 ### Composition API 란?
 
@@ -73,7 +73,7 @@ Composition API는 Vue.js 3에서 도입된 새로운 API입니다.
 
 <br>
 
-## # 코드를 통해 Mixin과 Composition API 살펴보기
+## 코드를 통해 Mixin과 Composition API 살펴보기
 
 **e.g. 멤버 정보 조회하는 API**
 
@@ -165,7 +165,7 @@ export default {
 
 <br>
 
-## # Mixin을 Composition API 로 교체
+## Mixin을 Composition API 로 교체
 
 Mixin 을 사용하는 방식은 회사의 컨벤션에 따릅니다. 저의 경우 이 전에는 Mixin에 편의성을 위해 유틸리티성 함수까지 Mixin에 작성했었습니다.
 

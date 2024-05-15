@@ -3,16 +3,14 @@ import { Link, graphql } from 'gatsby'
 
 import Layout from '@/layout'
 import SEO from '@/components/seo'
-// import TableOfContents from '@/components/table-of-contents'
+import TableOfContents from '@/components/table-of-contents'
 
 const BlogPostTemplate = ({ data: { previous, next, site, markdownRemark: post }, location }) => {
   const siteTitle = site.siteMetadata?.title || `Title`
 
   return (
     <Layout location={location} title={siteTitle}>
-      {/* <nav>
-        <TableOfContents content={post.tableOfContents} />
-      </nav> */}
+      <TableOfContents content={post.tableOfContents} />
       <article className="blog-post" itemScope itemType="http://schema.org/Article">
         <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
