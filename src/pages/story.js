@@ -53,7 +53,11 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
+    allMarkdownRemark(
+      limit: 1000
+      sort: { frontmatter: { date: DESC } }
+      filter: { frontmatter: { published: { eq: true } } }
+    ) {
       nodes {
         excerpt
         fields {

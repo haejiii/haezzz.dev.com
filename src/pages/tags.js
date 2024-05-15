@@ -34,7 +34,11 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(limit: 1000) {
+    allMarkdownRemark(
+      limit: 1000
+      sort: { frontmatter: { date: DESC } }
+      filter: { frontmatter: { published: { eq: true } } }
+    ) {
       group(field: frontmatter___tags) {
         fieldValue
         totalCount
