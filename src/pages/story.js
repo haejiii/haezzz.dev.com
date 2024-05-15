@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Link, graphql } from 'gatsby'
 
 import Layout from '@/layout'
-import Seo from '@/components/seo'
+import SEO from '@/components/seo'
 
 const StoryPage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -44,7 +44,7 @@ const StoryPage = ({ data, location }) => {
 
 export default StoryPage
 
-export const Head = () => <Seo title="All posts" />
+export const Head = () => <SEO title="All posts" />
 
 export const pageQuery = graphql`
   {

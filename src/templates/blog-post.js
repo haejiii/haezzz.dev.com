@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Link, graphql } from 'gatsby'
 
 import Layout from '@/layout'
-import Seo from '@/components/seo'
+import SEO from '@/components/seo'
 // import TableOfContents from '@/components/table-of-contents'
 
 const BlogPostTemplate = ({ data: { previous, next, site, markdownRemark: post }, location }) => {
@@ -58,7 +58,7 @@ export default BlogPostTemplate
 
 export const Head = ({ data: { markdownRemark: post } }) => {
   return (
-    <Seo
+    <SEO
       title={post.frontmatter.title}
       description={post.frontmatter.description || post.excerpt}
     />
