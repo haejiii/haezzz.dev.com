@@ -2,17 +2,15 @@ import * as React from 'react'
 import { Link, graphql } from 'gatsby'
 
 import Layout from '@/layout'
-import Seo from '@/components/seo'
-// import TableOfContents from '@/components/table-of-contents'
+import SEO from '@/components/seo'
+import TableOfContents from '@/components/table-of-contents'
 
 const BlogPostTemplate = ({ data: { previous, next, site, markdownRemark: post }, location }) => {
   const siteTitle = site.siteMetadata?.title || `Title`
 
   return (
     <Layout location={location} title={siteTitle}>
-      {/* <nav>
-        <TableOfContents content={post.tableOfContents} />
-      </nav> */}
+      <TableOfContents content={post.tableOfContents} />
       <article className="blog-post" itemScope itemType="http://schema.org/Article">
         <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
@@ -58,7 +56,7 @@ export default BlogPostTemplate
 
 export const Head = ({ data: { markdownRemark: post } }) => {
   return (
-    <Seo
+    <SEO
       title={post.frontmatter.title}
       description={post.frontmatter.description || post.excerpt}
     />

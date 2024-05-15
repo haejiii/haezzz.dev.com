@@ -12,7 +12,6 @@ const TagPostListTemplate = ({ data, location, pageContext }) => {
 
   return (
     <Layout location={location} title={siteTitle} subTitle={startCase(tagName)}>
-      <SEO title={siteTitle} keywords={[tagName]} />
       <ol>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
@@ -46,6 +45,12 @@ const TagPostListTemplate = ({ data, location, pageContext }) => {
 }
 
 export default TagPostListTemplate
+
+export const Head = ({ pageContext }) => {
+  const tagName = pageContext.tag
+
+  return <SEO title={startCase(tagName)} keywords={[tagName]} />
+}
 
 export const pageQuery = graphql`
   query ($tag: String) {

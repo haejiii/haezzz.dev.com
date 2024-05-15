@@ -9,7 +9,6 @@ const TagsPage = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All Tags" keywords={tags.map(_ => _.fieldValue)} />
       <ol className="tag-list">
         {tags.map(_ => {
           return (
@@ -27,6 +26,12 @@ const TagsPage = ({ data, location }) => {
 
 export default TagsPage
 
+export const Head = ({ data }) => {
+  const tags = data.allMarkdownRemark.group
+
+  return <SEO title="All Tags" keywords={tags.map(_ => _.fieldValue)} />
+}
+
 export const pageQuery = graphql`
   {
     site {
@@ -34,7 +39,11 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(limit: 1000) {
+    allMarkdownRemark(
+      limit: 1000
+      sort: { frontmatter: { date: DESC } }
+      filter: { frontmatter: { published: { eq: true } } }
+    ) {
       group(field: frontmatter___tags) {
         fieldValue
         totalCount

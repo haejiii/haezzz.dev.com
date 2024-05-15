@@ -1,10 +1,31 @@
-.table-of-content {
+@import '../../style/variables.scss';
+
+.table-of-content-wrap {
   position: fixed;
-  top: 0;
-  right: 0;
-  flex-grow: 0;
-  max-width: calc(100% / 3);
-  // flex-basis: calc(100% / 3);
-  margin-left: 1rem;
-  overflow: auto;
+  top: 210px;
+  right: 50px;
+}
+
+.table-of-content {
+  ul li {
+    list-style: none;
+  }
+
+  p {
+    line-height: 1;
+    margin-bottom: $spacing6;
+  }
+
+  a {
+    font-family: Pretendard-Light;
+    font-size: $fontSize-s;
+    color: $S600;
+    text-decoration: none;
+  }
+}
+
+@media (max-width: 1480px) {
+  .table-of-content {
+    display: none;
+  }
 }
