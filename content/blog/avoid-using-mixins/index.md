@@ -29,7 +29,7 @@ DRY의 중복배제로 `같은 정보의 중복을 지양하라`는 개념으로
 
 또한 컴포넌트와 믹스인 사이에 `동일한 라이프 사이클을 가졌을때`, 둘 다 실행되기 때문에 예측하지 못한 이슈가 발생할 수 있습니다.
 
-vue3 공식문서 또한 이러한 문제를 들어 Mixin 을 지양하고, [Composition API 를 사용하라고 권장](https://ko.vuejs.org/guide/reusability/composables#comparisons-with-other-techniques)합니다.
+vue3 공식문서 또한 이러한 문제를 들어 Mixin 을 지양하고, [Composition API 사용을 권장](https://ko.vuejs.org/guide/reusability/composables#comparisons-with-other-techniques)합니다.
 
 <br>
 
