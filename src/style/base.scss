@@ -10,7 +10,7 @@ body {
   font-family: Pretendard-Regular;
   font-size: $fontSize-s;
   color: $text-color;
-  background-color: $background-color;
+  background-color: $bg1;
 }
 
 footer {
@@ -72,18 +72,15 @@ h6 {
   font-size: $fontSize-s;
 }
 
-h1 > a {
-  color: inherit;
-  text-decoration: none;
-}
-
+h1 > a,
 h2 > a,
 h3 > a,
 h4 > a,
 h5 > a,
 h6 > a {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
+  border: none;
 }
 
 /* Prose */
@@ -159,11 +156,6 @@ strong {
   font-family: Pretendard-Bold;
 }
 
-:not(pre) > code[class*='language-'],
-pre[class*='language-'] {
-  border-radius: 10px;
-}
-
 table {
   width: 100%;
   margin-bottom: $spacing8;
@@ -178,7 +170,7 @@ table thead tr th {
 /* Link */
 a {
   font-family: Pretendard-Medium;
-  color: $primary-color;
+  color: $S700;
 }
 
 /* Button */
@@ -186,7 +178,7 @@ button.icon {
   width: fit-content;
   height: fit-content;
   border-radius: 50%;
-  background-color: $background-color;
+  background-color: $bg1;
   cursor: pointer;
   border: none;
   padding: 0;

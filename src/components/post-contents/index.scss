@@ -1,0 +1,50 @@
+@import '../../style/variables.scss';
+@import '../../style/font.scss';
+
+.blog-post {
+  header {
+    margin-bottom: $spacing12;
+    border-bottom: 0.1rem solid $border-color;
+
+    h1 {
+      margin-bottom: $spacing4;
+    }
+
+    p {
+      font-size: $fontSize-s;
+      color: $S700;
+      margin: $spacing4 0;
+    }
+  }
+
+  .desc {
+    margin: $spacing2 0;
+    color: $S500;
+  }
+
+  p > a,
+  li > a {
+    font-family: Pretendard-Bold;
+    color: $text-color;
+    text-decoration: none;
+    border-bottom: 1px solid $border-color;
+    padding: $spacing2;
+    margin: 0 $spacing2;
+
+    &:hover {
+      background: $bg2;
+      border: none;
+      border-radius: 0.4rem;
+    }
+  }
+}
+
+.blog-post-nav ul {
+  margin: $spacing2;
+}
+
+.tag-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding: $spacing16 0;
+}

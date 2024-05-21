@@ -1,21 +1,21 @@
 body.dark {
   /* Gray Colors */
-  --gray-50: #1b1b1e;
-  --gray-100: #3b3c3f;
-  --gray-200: #595a5d;
-  --gray-300: #6d6e71;
-  --gray-400: #95969a;
-  --gray-500: #b5b6b9;
-  --gray-600: #d9dadd;
-  --gray-700: #e8e9ed;
-  --gray-800: #f1f2f6;
-  --gray-900: #ffffff;
+  --gray-100: #1b1b1e;
+  --gray-200: #434343;
+  --gray-300: #595a5d;
+  --gray-400: #6d6e71;
+  --gray-500: #95969a;
+  --gray-600: #b5b6b9;
+  --gray-700: #d9dadd;
+  --gray-800: #efefef;
+  --gray-900: #f1f2f6;
 
   /* Primary Colors */
-  --primary: #647ae8;
+  --primary: #dff1ff;
 
   /* Background, Border, Font Colors */
-  --background-color: #14162a;
+  --bg-1: #0a0b0d;
+  --bg-2: #2c3539;
   --text-color: #ffffff;
-  --border-color: #ffffff;
+  --border-color: #efefef;
 }

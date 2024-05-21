@@ -14,7 +14,8 @@ $S900: var(--gray-900);
 $primary-color: var(--primary);
 
 /* Background, Border, Font Colors */
-$background-color: var(--background-color);
+$bg1: var(--bg-1);
+$bg2: var(--bg-2);
 $text-color: var(--text-color);
 $border-color: var(--border-color);
 
@@ -39,7 +40,7 @@ $max-width: 48rem;
 $min-height: 28rem;
 
 /* fontSize, line height */
-$fontSize-s: 0.8rem;
+$fontSize-s: 0.825rem;
 $fontSize-m: 1rem;
 $fontSize-l: 1.1rem;
 $fontSize-xl: 1.3rem;
