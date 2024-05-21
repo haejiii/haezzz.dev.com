@@ -4,6 +4,7 @@ import { Link, graphql } from 'gatsby'
 import Layout from '@/layout'
 import SEO from '@/components/seo'
 import TableOfContents from '@/components/table-of-contents'
+import PostContents from '@/components/post-contents'
 
 const BlogPostTemplate = ({ data: { previous, next, site, markdownRemark: post }, location }) => {
   const siteTitle = site.siteMetadata?.title || `Title`
@@ -11,16 +12,12 @@ const BlogPostTemplate = ({ data: { previous, next, site, markdownRemark: post }
   return (
     <Layout location={location} title={siteTitle}>
       <TableOfContents content={post.tableOfContents} />
-      <article className="blog-post" itemScope itemType="http://schema.org/Article">
-        <header>
-          <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
-        </header>
-        <div className="desc">
-          <p>{post.frontmatter.description}</p>
-        </div>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} itemProp="articleBody" />
-      </article>
+      <PostContents
+        title={post.frontmatter.title}
+        date={post.frontmatter.date}
+        description={post.frontmatter.description}
+        html={post.html}
+      />
       <hr />
       <nav className="blog-post-nav">
         <ul

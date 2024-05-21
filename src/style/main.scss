@@ -5,6 +5,7 @@
 
 @import 'font.scss';
 @import 'base.scss';
+@import 'code.scss';
 
 /* Custom classes */
 .post-list-item {
@@ -37,34 +38,4 @@
     font-size: $fontSize-s;
     color: $S500;
   }
-}
-
-.blog-post header {
-  margin-bottom: $spacing12;
-  border-bottom: 0.1rem solid $border-color;
-}
-
-.blog-post header h1 {
-  margin-bottom: $spacing4;
-}
-
-.blog-post header p {
-  font-size: $fontSize-s;
-  color: $S700;
-  margin: $spacing4 0;
-}
-
-.blog-post .desc {
-  margin: $spacing2 0;
-  color: $S500;
-}
-
-.blog-post-nav ul {
-  margin: $spacing2;
-}
-
-.tag-list {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  padding: $spacing16 0;
 }
