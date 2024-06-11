@@ -185,13 +185,12 @@ Mixin 을 사용하는 방식은 회사의 컨벤션에 따릅니다. 저의 경
 
 <br>
 
-이 부분은 회사마다 컨벤션이 다르기 때문에, 팀내의 충분한 논의를 통해 알맞은 방법을 선택하시면 될 것 같습니다.
+이 부분은 회사마다 컨벤션이 다르기 때문에, 팀내의 충분한 논의를 통해 알맞은 방법을 선택해야합니다.
 
+<br>
 <br>
 
 ## 참고
-
----
 
 - [You Shouldn’t be Using Mixins in Vue.js Anymore](https://javascript.plainenglish.io/you-shouldnt-be-using-mixins-in-vue-js-anymore-ec8c09824f9f)
 - [Vue.js](https://ko.vuejs.org/guide/reusability/composables#comparisons-with-other-techniques)
