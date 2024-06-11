@@ -1,10 +1,13 @@
 import './index.scss'
 
 import { Link } from 'gatsby'
+import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader'
 
 import GithubIconButton from '@/components/github-button'
 import ThemeSwitch from '@/components/theme-switch'
 import { ThemeProvider } from '@/theme'
+
+deckDeckGoHighlightElement()
 
 const CATEGORY_LIST = [
   { path: '/', title: 'Posts' },

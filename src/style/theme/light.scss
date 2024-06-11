@@ -1,14 +1,14 @@
 body {
   /* Gray Colors */
   --gary-50: #f8f8f8;
-  --gray-100: #f1f1f1;
-  --gray-200: #efefef;
+  --gray-100: #f1f2f6;
+  --gray-200: #e8e9ed;
   --gray-300: #d9dadd;
   --gray-400: #b5b6b9;
   --gray-500: #95969a;
   --gray-600: #6d6e71;
   --gray-700: #595a5d;
-  --gray-800: #434343;
+  --gray-800: #3b3c3f;
   --gray-900: #1b1b1e;
 
   /* Primary Colors */
@@ -16,7 +16,21 @@ body {
 
   /* Background, Border, Font Colors */
   --bg-1: #ffffff;
-  --bg-2: #f8f8f8;
-  --text-color: #0a0b0d;
-  --border-color: #efefef;
+  --text-color: #14162a;
+  --border-color: #e8e9ed;
+  --code-highlight-color: #f8f8f8;
+
+  --deckgo-highlight-code-background: #f4f5f8;
+  --deckgo-highlight-code-border-radius: 0.6rem;
+  --deckgo-highlight-code-padding: 0.8rem;
+  --deckgo-highlight-code-carbon-color: rgb(56, 58, 66);
+  --deckgo-highlight-code-token-atrule: #a626a4;
+  --deckgo-highlight-code-token-comment: #65737e;
+  --deckgo-highlight-code-token-comment-rgb: 101, 115, 126;
+  --deckgo-highlight-code-token-function: #4078f2;
+  --deckgo-highlight-code-token-operator: #0184bc;
+  --deckgo-highlight-code-token-property: #4078f2;
+  --deckgo-highlight-code-token-punctuation: rgb(56, 58, 66);
+  --deckgo-highlight-code-token-regex: rgb(80, 161, 79);
+  --deckgo-highlight-code-token-selector: #e45649;
 }
