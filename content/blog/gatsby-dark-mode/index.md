@@ -22,11 +22,13 @@ Gatsby 를 이용해 블로그 만들기를 시작하면서, 다크 모드 적�
 
 다크 모드를 구현하기 위해선 기본 컬러(`light`)와 다크 모드시 사용할 다크 컬러(`dark`)를 정의 해줘야 합니다.
 
-**`:root` 가상 클래스, 전역 변수 선언**
+**`:root` 가상 클래스 + 전역 변수 선언**
 
 모드 적용에 앞서 `:root` 가상 클래스와 전역 변수 선언에 대해 알아보겠습니다.
-`:root` 선택자는 웹 문서 구조에서 가장 상위 요소를 선택할 때 사용합니다. `:root를 이용해 최상위 요소에 변수를 선언하면 모든 요소에서 이 변수를 사용할 수 있습니다.
-아래와 같이 `:root` 가상 클래스로 전역으로 사용할 변수 정의 부분을 감싸줍니다.
+
+`:root` 선택자는 웹 문서 구조에서 가장 상위 요소를 선택할 때 사용합니다. `:root` 선택자를 통해 변수를 선언하게되면 최상위에 변수가 선언되기 때문에 모든 요소에서 이 변수에 접근할 수 있습니다.
+
+전역 변수 선언 방법은 아래와 같이 `:root` 선택자로 변수가 정의된 영역을 감싸줍니다.
 
 ```css
 :root {
@@ -38,15 +40,16 @@ Gatsby 를 이용해 블로그 만들기를 시작하면서, 다크 모드 적�
 ```
 
 <br />
+
 이제 `:root` 가상 클래스의 CSS 변수를 이용한 테마 모드를 적용해보겠습니다.
 먼저 아래의 두 가지 방법으로 다크 모드를 적용할 수 있습니다. 각 방법에 대해 장점과 단점을 작성해봤습니다.
 
-1. 시스템 테마 `prefers-color-schema` 미디어 쿼리 사용
+1. **시스템 테마 `prefers-color-schema` 미디어 쿼리 사용**
 
 - 장점 : CSS 만으로 테마를 구현할 수 있다.
 - 단점 : light, dark 테마 모드만 적용 가능하고, 사용자의 시스템 설정을 무조건 따라야한다.
 
-2. body 태그에 테마에 따라 class 추가
+2. **body 태그에 테마에 따라 class 추가**
 
 - 장점 : light, dark 이외의 다른 테마 모드도 적용 가능하고, 테마 변경이 자유롭다.
 - 단점 : CSS 만으로 제어할 수 없고, 제어를 위한 추가 스크립트를 구현해야한다.
@@ -60,10 +63,14 @@ Gatsby 를 이용해 블로그 만들기를 시작하면서, 다크 모드 적�
 <details>
     <summary>JS 에서 시스템 컬러 모드 확인하는 방법</summary>
 
+<div>
+
 ```js
 // prefers-color-scheme 미디어 쿼리 값이 `dark` 인 지 매칭
 window.matchMedia('(prefers-color-scheme: dark)').matches
 ```
+
+</div>
 
 </details>
 
@@ -154,7 +161,6 @@ const setThemeMode = mode => {
 **페이지 첫 접근 시 적용된 테마 설정**
 
 ```js
-// 첫 렌더 시에만 실행되도록
 useEffect(() => {
   // STEP 1. 현재 테마 모드 가져오기
   const currentMode = getThemeMode()
@@ -210,7 +216,7 @@ SSR은 간단히 말하자면 html 을 서버에서 생성하는 방식입니다
 
 <br/>
 
-gatsby.ssr.js
+**gatsby.ssr.js**
 
 ```js
 /**
@@ -224,6 +230,7 @@ export const onRenderBody = ({ setHtmlAttributes, setPreBodyComponents }) => {
     const currentMode = localThemeMode ?? systemThemeMode
     document.body.classList.add(currentMode)
   `
+
   setHtmlAttributes({ lang: `en` })
   setPreBodyComponents(<script dangerouslySetInnerHTML={{ __html: preloadScript }} />)
 }
@@ -233,7 +240,7 @@ export const onRenderBody = ({ setHtmlAttributes, setPreBodyComponents }) => {
 
 마지막으로 페이지 첫 렌더링 시 초기값을 적용하기 위해 useEffect hook 을 수정합니다.
 
-body 에 추가된 테마 클래스를 가져와 SSR과 CSR 테마 상태값을 연동합니다.
+body 에 추가된 테마 클래스를 가져와 SSR과 CSR 테마 상태를 hydration 해줍니다.
 
 ```js
 useEffect(() => {
@@ -246,7 +253,7 @@ useEffect(() => {
 	// STEP 3. 로컬 스토리지에 테마 모드 값 갱신
 	localStorage.setItem('theme-mode', currentMode)
 
-useEffect(() => {
+  useEffect(() => {
     // NOTE: 브라우저 환경에서만 실행
     if (isBrowser) {
       const currentMode = window.document.body.classList.contains(THEME_MODE.DARK)
@@ -261,7 +268,9 @@ useEffect(() => {
 
 ## 마치며
 
-CSS를 이용해 다크 모드를 적용하는 방법에 대해 정리해보았습니다. 기존에 이미 익숙해진 UI 라이브러리가 있다면 더욱 빠르게 다크 모드를 적용할 수 있습니다. 하지만 성능을 고려해야되는 실무에서는 UI 라이브러리 도입이 많이 고민될 것이라고 생각합니다. “바퀴를 다시 발명하지 마라”라는 말과 같이 미리 만들어진 바퀴는 개발 시간의 단축시킬 수 있습니다. 하지만 우리는 바퀴를 발명해야되는 순간도 발생합니다. 이때 우리는 다시 순수 CSS 와 JavaScript 를 이용해 개발할 수 있다는 알고있어야합니다.
+CSS 를 이용해 다크 모드를 적용하는 방법에 대해 정리해보았습니다. 실무에서는 성능과 유지보수의 부담과 다양한 상황에 유연하게 대응하기 위해서 자체적으로 개발해야될 때가 옵니다.
+
+"바퀴를 다시 발명하지 마라"라는 말과 같이 미리 만들어진 바퀴는 개발 시간을 단축시켜줄 순 있지만, 우리는 바퀴를 발명해야되는 순간도 발생할 수 있습니다. 이 때 우리는 다시 순수 html, css, javascript만을 이용해 개발할 수 있어야합니다.
 
 <br/>
 <br/>
