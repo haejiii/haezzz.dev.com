@@ -1,12 +1,12 @@
 import * as React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Layout from '@/layout'
 import SEO from '@/components/seo'
 import TableOfContents from '@/components/table-of-contents'
 import PostContents from '@/components/post-contents'
 
-const BlogPostTemplate = ({ data: { previous, next, site, markdownRemark: post }, location }) => {
+const BlogPostTemplate = ({ data: { site, markdownRemark: post }, location }) => {
   const siteTitle = site.siteMetadata?.title || `Title`
 
   return (
@@ -16,35 +16,9 @@ const BlogPostTemplate = ({ data: { previous, next, site, markdownRemark: post }
         title={post.frontmatter.title}
         date={post.frontmatter.date}
         description={post.frontmatter.description}
+        tags={post.frontmatter.tags}
         html={post.html}
       />
-      <hr />
-      <nav className="blog-post-nav">
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
     </Layout>
   )
 }
@@ -61,7 +35,7 @@ export const Head = ({ data: { markdownRemark: post } }) => {
 }
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($id: String!, $previousPostId: String, $nextPostId: String) {
+  query BlogPostBySlug($id: String!) {
     site {
       siteMetadata {
         title
@@ -75,24 +49,9 @@ export const pageQuery = graphql`
         title
         date(formatString: "YYYY-MM-DD")
         description
+        tags
       }
       tableOfContents
-    }
-    previous: markdownRemark(id: { eq: $previousPostId }) {
-      fields {
-        slug
-      }
-      frontmatter {
-        title
-      }
-    }
-    next: markdownRemark(id: { eq: $nextPostId }) {
-      fields {
-        slug
-      }
-      frontmatter {
-        title
-      }
     }
   }
 `

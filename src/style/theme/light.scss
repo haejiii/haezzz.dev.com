@@ -16,7 +16,21 @@ body {
 
   /* Background, Border, Font Colors */
   --bg-1: #ffffff;
-  --bg-2: #f4f3f3;
   --text-color: #14162a;
   --border-color: #e8e9ed;
+  --code-highlight-color: #f8f8f8;
+
+  --deckgo-highlight-code-background: #f4f5f8;
+  --deckgo-highlight-code-border-radius: 0.6rem;
+  --deckgo-highlight-code-padding: 0.8rem;
+  --deckgo-highlight-code-carbon-color: rgb(56, 58, 66);
+  --deckgo-highlight-code-token-atrule: #a626a4;
+  --deckgo-highlight-code-token-comment: #65737e;
+  --deckgo-highlight-code-token-comment-rgb: 101, 115, 126;
+  --deckgo-highlight-code-token-function: #4078f2;
+  --deckgo-highlight-code-token-operator: #0184bc;
+  --deckgo-highlight-code-token-property: #4078f2;
+  --deckgo-highlight-code-token-punctuation: rgb(56, 58, 66);
+  --deckgo-highlight-code-token-regex: rgb(80, 161, 79);
+  --deckgo-highlight-code-token-selector: #e45649;
 }

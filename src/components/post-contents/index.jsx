@@ -1,6 +1,8 @@
+import { Link } from 'gatsby'
+
 import './index.scss'
 
-const PostContents = ({ title, date, description, html }) => {
+const PostContents = ({ title, date, description, tags, html }) => {
   return (
     <article className="blog-post" itemScope itemType="http://schema.org/Article">
       <header>
@@ -11,6 +13,13 @@ const PostContents = ({ title, date, description, html }) => {
         <p>{description}</p>
       </div>
       <section dangerouslySetInnerHTML={{ __html: html }} itemProp="articleBody" />
+      <footer>
+        <div className="blog-post-tags">
+          {tags.map(_ => (
+            <Link to={`/tags/${_}`}>{_}</Link>
+          ))}
+        </div>
+      </footer>
     </article>
   )
 }

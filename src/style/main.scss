@@ -5,7 +5,6 @@
 
 @import 'font.scss';
 @import 'base.scss';
-@import 'code.scss';
 
 /* Custom classes */
 .post-list-item {
@@ -28,6 +27,7 @@
   .left {
     flex: 1;
     max-width: 10rem;
+    padding: $spacing10;
   }
 
   .right {
@@ -35,7 +35,13 @@
   }
 
   .date {
-    font-size: $fontSize-s;
+    font-size: $fontSize-m;
     color: $S500;
   }
+}
+
+.tag-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding: $spacing16 0;
 }

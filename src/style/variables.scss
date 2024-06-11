@@ -15,9 +15,9 @@ $primary-color: var(--primary);
 
 /* Background, Border, Font Colors */
 $bg1: var(--bg-1);
-$bg2: var(--bg-2);
 $text-color: var(--text-color);
 $border-color: var(--border-color);
+$code-highlight-color: var(--code-highlight-color);
 
 /* Spacing */
 $spacing0: 0rem;
@@ -40,13 +40,17 @@ $max-width: 48rem;
 $min-height: 28rem;
 
 /* fontSize, line height */
-$fontSize-s: 0.825rem;
-$fontSize-m: 1rem;
-$fontSize-l: 1.1rem;
-$fontSize-xl: 1.3rem;
-$fontSize-xxl: 1.6rem;
-$fontSize-xxxl: 2.4rem;
+$fontSize-s: 0.625rem;
+$fontSize-m: 0.8rem;
+$fontSize-l: 1rem;
+$fontSize-xl: 1.1rem;
+$fontSize-xxl: 1.4rem;
+$fontSize-xxxl: 2rem;
 
 $lineHeight-tight: 1.1;
 $lineHeight-normal: 1.5;
 $lineHeight-relaxed: 1.625;
+
+$borderRadius-sm: 0.2rem;
+$borderRadius-md: 0.6rem;
+$borderRadius-lg: 1rem;

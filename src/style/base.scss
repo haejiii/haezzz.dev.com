@@ -8,7 +8,7 @@
 
 body {
   font-family: Pretendard-Regular;
-  font-size: $fontSize-s;
+  font-size: $fontSize-m;
   color: $text-color;
   background-color: $bg1;
 }
@@ -110,14 +110,14 @@ ol li {
 }
 
 ul li::marker {
-  color: $S400;
+  color: $S500;
   font-size: $fontSize-m;
 }
 
 ol li::marker {
-  color: $S400;
+  color: $S500;
   font-family: Pretendard-Bold;
-  font-size: $fontSize-s;
+  font-size: $fontSize-m;
 }
 
 li > p {
@@ -165,6 +165,12 @@ table {
 
 table thead tr th {
   border-bottom: 1px solid $border-color;
+}
+
+code {
+  background: $code-highlight-color;
+  padding: $spacing2;
+  border-radius: $borderRadius-sm;
 }
 
 /* Link */

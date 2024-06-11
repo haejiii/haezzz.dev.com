@@ -11,8 +11,9 @@
     }
 
     p {
+      font-family: Pretendard-Light;
       font-size: $fontSize-s;
-      color: $S700;
+      color: $S500;
       margin: $spacing4 0;
     }
   }
@@ -32,19 +33,31 @@
     margin: 0 $spacing2;
 
     &:hover {
-      background: $bg2;
+      background: $code-highlight-color;
       border: none;
       border-radius: 0.4rem;
     }
   }
 }
 
-.blog-post-nav ul {
-  margin: $spacing2;
-}
+.blog-post-tags {
+  display: flex;
+  padding: 0;
+  margin-top: $spacing16;
 
-.tag-list {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  padding: $spacing16 0;
+  a {
+    text-decoration: none;
+    border: none;
+    background-color: $code-highlight-color;
+    color: $S800;
+    font-family: BMYEONSUNG;
+    border-radius: $borderRadius-lg;
+    padding: $spacing6;
+    margin-right: $spacing10;
+
+    &:hover {
+      background-color: $S100;
+      border-radius: $borderRadius-lg;
+    }
+  }
 }
