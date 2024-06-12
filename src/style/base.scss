@@ -107,7 +107,7 @@ ul li,
 ol li {
   position: relative;
   padding-left: $spacing0;
-  margin-bottom: calc($spacing8 / 2);
+  margin-bottom: $spacing6;
 }
 
 ul li::marker {
@@ -135,13 +135,11 @@ li > ul {
 }
 
 blockquote {
-  color: $S400;
-  margin-left: calc(-1 * $spacing6);
-  margin: 0;
+  border-left: $spacing2 solid $S400;
+  font-size: $fontSize-m;
+  color: $S600;
+  margin: $spacing10 calc(-1 * $spacing6) $spacing10 0;
   padding-left: $spacing6;
-  border-left: $spacing2 solid $S500;
-  font-size: $fontSize-s;
-  margin-bottom: $spacing8;
 }
 
 blockquote > :last-child {
@@ -179,6 +177,12 @@ details > div {
   border-radius: $borderRadius-md;
   margin: $spacing2;
   padding: 0 $spacing10;
+}
+
+img[alt='gif'] {
+  max-width: 630px;
+  display: block;
+  margin: 0 auto;
 }
 
 /* Link */

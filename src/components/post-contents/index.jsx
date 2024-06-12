@@ -16,7 +16,9 @@ const PostContents = ({ title, date, description, tags, html }) => {
       <footer>
         <div className="blog-post-tags">
           {tags.map(_ => (
-            <Link to={`/tags/${_}`}>{_}</Link>
+            <Link key={_} to={`/tags/${_}`}>
+              {_}
+            </Link>
           ))}
         </div>
       </footer>
