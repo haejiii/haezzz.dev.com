@@ -37,7 +37,9 @@ export const ThemeProvider = ({ children }) => {
   const toggleThemeMode = () => {
     if (theme.mode === THEME_MODE.DARK) {
       window.document.body.classList.remove(THEME_MODE.DARK)
+      window.document.body.classList.add(THEME_MODE.LIGHT)
     } else {
+      window.document.body.classList.remove(THEME_MODE.LIGHT)
       window.document.body.classList.add(THEME_MODE.DARK)
     }
 
