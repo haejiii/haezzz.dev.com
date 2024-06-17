@@ -6,8 +6,12 @@ import { THEME_MODE, useTheme } from '@/theme'
 import classNames from 'classnames'
 
 const ThemeSwitch = () => {
-  const { mode, toggleThemeMode } = useTheme()
+  const { mode } = useTheme()
   const isDarkMode = mode === THEME_MODE.DARK
+
+  const toggleThemeMode = () => {
+    throw new Error('hi')
+  }
 
   return (
     <Switch
