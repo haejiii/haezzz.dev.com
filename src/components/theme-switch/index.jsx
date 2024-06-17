@@ -9,6 +9,10 @@ const ThemeSwitch = () => {
   const { mode } = useTheme()
   const isDarkMode = mode === THEME_MODE.DARK
 
+  const toggleThemeMode = () => {
+    throw new Error('hi')
+  }
+
   return (
     <Switch
       checked={isDarkMode}
