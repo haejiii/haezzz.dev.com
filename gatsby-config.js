@@ -132,5 +132,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-sass',
+    '@sentry/gatsby',
   ],
 }
