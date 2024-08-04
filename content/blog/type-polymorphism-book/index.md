@@ -2,7 +2,7 @@
 title: '[Book Review] 타입으로 견고하게 다형성으로 유연하게'
 date: '2024-08-02 23:35:37'
 description: '"타입으로 견고하게 다형성으로 유연하게" 책 리뷰.'
-published: true
+published: false
 tags:
   - book
   - type
