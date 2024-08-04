@@ -79,10 +79,10 @@ Link : [Prettier vs ESLint Stylistic vs DPrint](https://careerly.co.kr/qnas/5871
 
 ## ESLint Stylistic 을 선택한 이유
 
-ESLint Stylistic 을 선택한 이유는 사실 간단합니다. 기존에 코드 컨벤션이 어느정도 잡혀있었기 때문에 변경점을 최소화하며 규칙을 세세하게 정할 수 있기 떄문입니다.
+ESLint Stylistic 을 선택한 이유는 기존에 코드 컨벤션이 어느정도 잡혀있었기 때문에 변경점을 최소화하며 팀 내의 규칙을 세밀하게 정할 수 있기 때문에 선택하게 되었습니다.
 
 <br />
-DPrint는 적용 사례가 많지 않고, 사실상 ESLint Stylistic과 Prettier 사이에서 고민을 했다. 아래는 두 포맷터의 장/단점을 정리한 내용입니다.
+DPrint는 적용 사례가 많지 않고, 사실상 ESLint Stylistic과 Prettier 사이에서 고민을 했었는데, 아래는 그 당시 두 포맷터의 장/단점을 정리한 내용입니다.
 
 <br />
 
