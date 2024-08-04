@@ -5,7 +5,7 @@
   "author": "haejiii",
   "scripts": {
     "build": "gatsby build",
-    "dev": "gatsby develop -p 8020",
+    "dev": "gatsby develop -p 8020 -o",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
