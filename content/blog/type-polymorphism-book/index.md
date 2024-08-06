@@ -2,7 +2,7 @@
 title: '[Book Review] 타입으로 견고하게 다형성으로 유연하게'
 date: '2024-08-02 23:35:37'
 description: '"타입으로 견고하게 다형성으로 유연하게" 책 리뷰.'
-published: false
+published: true
 tags:
   - book
   - type
@@ -73,17 +73,102 @@ function readFile(file: File) { ... }
 
 다형성은 어떤 개체에 어떻게 부여하는지에 따라 나눌 수 있습니다.
 
-- 서브 타입에 의한 다형성
-- 매개변수에 의한 다형성
-- 오버로딩에 의한 다형성
+- `서브타입`에 의한 다형성
+- `매개변수`에 의한 다형성
+- `오버로딩`에 의한 다형성
 
 <br />
+
+---
 
 ## 2장 요약
 
+### 서브타입에 의한 다형성 규칙
+
+- 요구 조건 : `A가 B이다.`
+- A가 B이면 `A는 B의 서브타입`이다.
+- A가 B의 서브타입이면 `B는 A의 슈퍼타입`이다.
+
 <br />
 
+---
+
 ## 3장 요약
+
+<br />
+
+### 제니릭 함수 예시
+
+```ts
+// useToast 훅 내의 validation 검사 함수
+const useToast = () => {
+	...
+
+  const toastOnInvalidForm = <T extends FieldErrors>(err: T) => {
+    const firstError = Object.values(err)[0]?.message
+    toast(firstError as ReactNode, 'error')
+	}
+
+	return { ..., toastOnInvalidForm }
+}
+```
+
+<br />
+
+### 제네릭 타입 예시
+
+```ts
+type Img<T> = T & {
+  width: number
+  height: number
+}
+
+type ContentImg = {
+  name: string
+  src: string
+}
+
+interface Content {
+  img: Img<ContentImg>
+}
+
+const content: Content = {
+  img: {
+    width: 0,
+    height: 0,
+    name: '',
+    src: '',
+  },
+}
+
+console.log(content)
+```
+
+<br />
+
+### 타입 챌린지
+
+- 요구 조건 : Omit 제네릭 타입을 사용하지 않고 만들기
+
+```ts
+type MyOmit<T extends {}, K extends keyof T> = {
+  [P in keyof T as P extends K ? never : P]: T[P]
+}
+
+/* _____________ 테스트 케이스 _____________ */
+import type { Equal, Expect } from '@type-challenges/utils'
+
+type cases = [
+  Expect<Equal<Expected1, MyOmit<Todo, 'description'>>>,
+  Expect<Equal<Expected2, MyOmit<Todo, 'description' | 'completed'>>>,
+  Expect<Equal<Expected3, MyOmit<Todo1, 'description' | 'completed'>>>
+]
+```
+
+- T는 타입 매개변수로 object 를 확장한 타입 매개변수이다.
+- object 타입만 인자로 넘길 수 있다. (타입 좁히기)
+- K 는 T 타입 매개변수를 확장한 T object에 속한 key 타입으로 확장하여, object key에 해당되는 인자만 넘길 수 있다. (타입 좁히기)
+- MyOmit 함수는 object의 타입 매개변수를 받아 object 에 속한 key 중 K 를 제외한 타입이다.
 
 <br />
 
