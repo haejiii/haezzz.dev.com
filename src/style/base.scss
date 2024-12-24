@@ -107,7 +107,7 @@ ul li,
 ol li {
   position: relative;
   padding-left: $spacing0;
-  margin-bottom: $spacing6;
+  margin-bottom: $spacing8;
 }
 
 ul li::marker {
@@ -138,7 +138,7 @@ blockquote {
   border-left: $spacing2 solid $S400;
   font-size: $fontSize-m;
   color: $S600;
-  margin: $spacing10 calc(-1 * $spacing6) $spacing10 0;
+  margin: $spacing8 calc(-1 * $spacing6) $spacing8 0;
   padding-left: $spacing6;
 }
 
